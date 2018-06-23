@@ -8,8 +8,13 @@ using namespace std;
 Sequence::Sequence(string filename)
 {ifstream infile;
 infile.open(filename.data());
-for(int i=0;i<11703;i++)
-{getline(infile,str);}
+int i=0;
+while(getline(infile,str)&&i<11704)
+{s[i]=str;
+i++;
+}
+for(int j=0;j<=11703;j++)
+ss=ss+s[j];
 infile.close();
 }
 Sequence::~Sequence()
@@ -17,7 +22,7 @@ Sequence::~Sequence()
 }
 int Sequence::length()
 {
-len = str.length();
+len = ss.length();
 cout<<len<<endl;
 }
 int Sequence::numberOf(char base)
