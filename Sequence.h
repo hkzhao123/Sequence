@@ -19,6 +19,8 @@ int len;
 string longestc;
 string longestr;
 string str;
+string s[11704];
+string ss;
 };
 
 #endif
