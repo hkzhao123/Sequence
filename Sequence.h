@@ -3,7 +3,8 @@
 #include<stdio.h>
 #include<iostream>
 #include<string>
-#using namespace std;
+#include<cstring>
+using namespace std;
 
 class Sequence
 {public:
@@ -18,6 +19,6 @@ int len;
 string longestc;
 string longestr;
 string str;
-}
+};
 
 #endif
