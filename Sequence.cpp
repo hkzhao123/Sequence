@@ -57,5 +57,19 @@ atcg="";
 }
 }
 string Sequence::longestRepeated()
-{
+{string temp;
+for(int i=len;i>1;i--)
+for(int j=0;j<len;j++)
+{if(i+j<=len)
+{size_t t=0;
+size_t num=0;
+temp = ss.substr(j,i);
+t= ss.find(temp);
+num = ss.rfind(temp);
+if(t!=num)
+{cout<<temp<<endl;
+return 0;
+}
+}
+}
 }
