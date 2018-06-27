@@ -3,7 +3,6 @@
 #include<stdio.h>
 #include<iostream>
 #include<string>
-#include<cstring>
 using namespace std;
 
 class Sequence
@@ -16,8 +15,7 @@ string longestConsecutive();
 string longestRepeated();
 int num;
 int len;
-string longestc;
-string longestr;
+int comlen(char *,char *);
 string str;
 string s[11704];
 string ss;
