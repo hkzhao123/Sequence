@@ -17,6 +17,7 @@ int num;
 int len;
 int comlen(char *,char *);
 string str;
+string stt;
 string s[11704];
 string ss;
 };
