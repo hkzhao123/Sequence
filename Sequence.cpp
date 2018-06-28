@@ -7,6 +7,7 @@
 #include<algorithm>
 #include<time.h>
 #include<bits/stdc++.h>
+#define MAXCHAR 1200000
 using namespace std;
 
 Sequence::Sequence(string filename)
@@ -73,11 +74,11 @@ int pstrcmp( const void *p1, const void *p2 ){
 string Sequence::longestRepeated()
 {
 const int len1 = ss.length();
-char *a =  new char[len1+200];
-char** c = new char* [len1+200];
+char *a =  new char[MAXCHAR];
+char** c = new char* [MAXCHAR];
 int maxlen=99,maxi=0;
 int i=0;
-while(i<len)
+while(i<len1)
 {c[i]=&a[i];
 a[i]=ss[i++];
 }
