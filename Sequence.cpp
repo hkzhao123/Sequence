@@ -5,6 +5,7 @@
 #include<stdlib.h>
 #include<fstream>
 #include<algorithm>
+#include<time.h>
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -69,25 +70,27 @@ int Sequence::comlen( char *p, char *q ){
 int pstrcmp( const void *p1, const void *p2 ){
     return strcmp( *(char* const *)p1, *(char* const*)p2 );
 }
-char a[2000000],*c[2000000];
 string Sequence::longestRepeated()
-{for(int i=0;i<len;i++)
-a[i]=ss[i];
-for(int i=0;i<len;i++)
-c[i]=&a[i];
-c[len]=0;
-c[len+1]=0;
-qsort(c,len,sizeof(char*),pstrcmp);
-string zzz;
-int maxlen=-1,t,p;
-for(int i=1;i<maxlen;i++)
-{t=comlen(c[i-1],c[i]);
-if(t>maxlen)
-{maxlen=t;
-p=i;
-}}
-for(int i=0;i<maxlen;i++)
-{zzz=c[p][i]+zzz;
+{
+const int len1 = ss.length();
+char *a =  new char[len1+200];
+char** c = new char* [len1+200];
+int maxlen=99,maxi=0;
+int i=0;
+while(i<len)
+{c[i]=&a[i];
+a[i]=ss[i++];
 }
-cout<<zzz<<endl;
+a[i]='\0';
+qsort(c,len1,sizeof(char*),pstrcmp);
+for(int i=0;i<len1-1;i++)
+{if(comlen(c[i],c[i+1])>maxlen)
+{maxlen = comlen(c[i],c[i+1]);
+maxi=i;
+}
+}
+stt.assign(c[maxi],maxlen);
+delete []a;
+delete []c;
+cout<<stt<<endl;
 }
